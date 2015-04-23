@@ -2,7 +2,7 @@
 Utilities for counting letter coverage of random BIP39 mnemonics 
 
 Introduction to the general problem
-====
+---
 
 We have some set of two-sided cards with letters, on each card are two letters, one from each side. The cards are intended for writing down a BIP39 seed, 24 words.
 
@@ -45,7 +45,7 @@ So, I compute the coverage by two means:
 In this repo there is all you need to replicate those experiments. All are using python3.
 
 Generating random seeds
-====
+---
 First install pbkdf2
 
      sudo pip3 install pbkdf2
@@ -61,14 +61,14 @@ The script never ends, so you will either have to kill it by ctrl-c or just pipe
 My results (slightly over 6 million seeds) can be found [here](https://dl.dropboxusercontent.com/u/12170550/counting/big_seeds.tar.xz) (279 MB zipped, 980MB unzipped).
 
 Converting seeds to CSV with counts
-=====
+---
 
     cat bit | ./convert_seeds_to_csv.py > csv
 
 Results for the same set of seeds can be found [here](https://dl.dropboxusercontent.com/u/12170550/counting/big_csv.tar.xz) (44 MB zipped, 206MB unzipped)
 
 Create SQL from csv
-====
+---
 
 First install postgres...
 
@@ -83,7 +83,7 @@ and now create the tables. Note: user postgres must have access right to read th
     ./create_sql.py /path/to/csv postgres seedcountdb counttable
 
 Do the greedy search
-=====
+---
 Assuming the SQL table is created
 
     ./count_prob 10 postgres seedcountdb counttable
@@ -91,7 +91,7 @@ Assuming the SQL table is created
 where 10 is the divisibility (it can be anything from 1 to infinity)
 
 Final results
-====
+---
 
 They are in final/ directory
 
