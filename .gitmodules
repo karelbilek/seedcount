@@ -1,0 +1,3 @@
+[submodule "seedcount/mnemonic"]
+	path = seedcount/mnemonic
+	url = git@github.com:trezor/python-mnemonic.git
