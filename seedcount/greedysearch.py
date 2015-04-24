@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-import sqlcounts
-import approximation
+from seedcount import sqlcounts
+from seedcount import approximation
 import sys
 from copy import copy
 
