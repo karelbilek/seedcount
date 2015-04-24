@@ -4,6 +4,8 @@ Utilities for counting letter coverage of random BIP39 mnemonics
 Introduction to the general problem
 ---
 
+An interactive illustration of the problem is [here](http://www.karelbilek.com/seedcount/) (slightly hacked together though).
+
 We have some set of two-sided cards with letters, on each card are two letters, one from each side. The cards are intended for writing down a BIP39 seed, 24 words.
 
 We want to make as little cards as possible to cover as many possible BIP39 seeds as possible. An additional goal is make the number of the cards divisible by some number, for example 10, so that they could be manufactured more easily.
