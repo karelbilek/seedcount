@@ -192,10 +192,23 @@ function repaintWords() {
         allWords.reverse();
         allWords.forEach(function(o){
             html += "<hr>"
+            notenoughOb = {};
+            o.notenough.forEach(function(l){
+                l.split("").forEach(function(s){
+                    notenoughOb[s]=1;
+                })
+            });
             for (var i=0; i<24; i++) {
+                
                 sh = o.shortP[i];
                 en = o.endingsP[i];
-                html += sh;
+                sh.split("").forEach(function(l) {
+                    if (notenoughOb[l]===1) {
+                        html += "<font color='red'>"+l+"</font>";
+                    } else {
+                        html += l;
+                    }
+                });
                 html += "<font color='gray'><small>"+en+"</small></font> ";
             }
             if (o.notenough.length == 0) {
